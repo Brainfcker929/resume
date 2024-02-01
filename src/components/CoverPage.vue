@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import profilePic from "src/assets/pictures/me.png";
+import profilePic from "@/assets/pictures/me.png";
 
 
 const profile = {
