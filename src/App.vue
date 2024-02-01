@@ -1,9 +1,5 @@
 <template>
-  <v-app
-    w-100
-    h-100
-    ma-1
-  >
+  <v-app>
     <v-app-bar
       density="compact"
       rounded
@@ -26,21 +22,29 @@
         <v-list-item
           v-for="item in navigationItems"
           :key="item.title"
+          :href="makeId(item.title)"
           :title="item.title"
           :prepend-icon="item.icon"
         />
       </v-list>
     </v-navigation-drawer>
 
-    <v-main
-      h-100
-      w-100
-    >
+    <v-main>
       <v-container>
         <v-row>
-          <v-col>
-            <CoverPage />
-          </v-col>
+          <CoverPage id="Home" />
+        </v-row>
+        <v-row>
+          <AboutPage id="About" />
+        </v-row>
+        <v-row>
+          <CoverPage id="Home" />
+        </v-row>
+        <v-row>
+          <CoverPage id="Home" />
+        </v-row>
+        <v-row>
+          <CoverPage id="Contact" />
         </v-row>
       </v-container>
     </v-main>
@@ -49,9 +53,13 @@
 
 <script setup lang="ts">
 import CoverPage from "./components/CoverPage.vue";
+import AboutPage from "./components/AboutPage.vue";
 const navigationItems = [
   { title: "Home", icon: "mdi-home" },
   { title: "About", icon: "mdi-information" },
   { title: "Contact", icon: "mdi-email" },
 ];
+const makeId = (title: string) => {
+  return `#${title}`;
+};
 </script>
