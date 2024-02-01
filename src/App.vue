@@ -1,40 +1,57 @@
 <template>
-  <v-app>
-    <!-- Header -->
-    <v-app-bar app dense>
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
-      <v-toolbar-title>Resume</v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn icon="true">
-        <v-icon>mdi-home</v-icon>
-      </v-btn>
+  <v-app
+    w-100
+    h-100
+    ma-1
+  >
+    <v-app-bar
+      density="compact"
+      rounded
+    >
+      <v-app-bar-nav-icon active>
+        Icon
+      </v-app-bar-nav-icon>
+      <v-toolbar-title text="Pauls Portfolio" />
     </v-app-bar>
+      
+    <v-navigation-drawer location="right">
+      <v-list-item title="Navigation" />
+      <v-divider />
+        
+      <v-list
+        density="compact"
+        nav
+      >
+        <!-- wieso gehen icons nicht -->
+        <v-list-item
+          v-for="item in navigationItems"
+          :key="item.title"
+          :title="item.title"
+          :prepend-icon="item.icon"
+        />
+      </v-list>
+    </v-navigation-drawer>
 
-    <!-- Main Layout -->
-    <v-row no-gutters class="flex-row-reverse">
-      <!-- Main Content Area -->
-      <v-col cols="10">
-        <v-main>
-          <v-container fluid>
-            <h1>Hallo Welt</h1>
-          </v-container>
-        </v-main>
-      </v-col>
-      <!-- Navigation -->
-      <v-col cols="2">
-        <NavigationPage> </NavigationPage>
-      </v-col>
-    </v-row>
+    <v-main
+      h-100
+      w-100
+    >
+      <v-container>
+        <v-row>
+          <v-col>
+            <CoverPage />
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-main>
   </v-app>
 </template>
 
 <script setup lang="ts">
-import NavigationPage from "./components/NavigationPage.vue";
+import CoverPage from "./components/CoverPage.vue";
+const navigationItems = [
+  { title: "Home", icon: "mdi-home" },
+  { title: "About", icon: "mdi-information" },
+  { title: "Contact", icon: "mdi-email" },
+];
 </script>
-
-<style>
-.flex-row-reverse {
-  display: flex;
-  flex-direction: row-reverse;
-}
-</style>
