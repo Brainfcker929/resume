@@ -1,17 +1,14 @@
 {
   "recommendations": [
     "antfu.iconify",
-    "christian-kohler.npm-intellisense",
     "dbaeumer.vscode-eslint",
-    "eamodio.gitlens",
     "ecmel.vscode-html-css",
     "folke.vscode-monorepo-workspace",
     "formulahendry.auto-rename-tag",
     "lokalise.i18n-ally",
-    "ms-azuretools.vscode-docker",
     "ms-vscode.vscode-typescript-next",
     "PKief.material-icon-theme",
-    "richie5um2.vscode-sort-json",
+    "SilverFletcherr.vuetify-gotodocs",
     "tomphilbin.gruvbox-themes",
     "Vue.volar",
     "Vue.vscode-typescript-vue-plugin",
