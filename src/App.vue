@@ -38,13 +38,7 @@
           <AboutPage id="About" />
         </v-row>
         <v-row>
-          <CoverPage id="Home" />
-        </v-row>
-        <v-row>
-          <CoverPage id="Home" />
-        </v-row>
-        <v-row>
-          <CoverPage id="Contact" />
+          <TimelinePage id="Timeline" />
         </v-row>
       </v-container>
     </v-main>
@@ -54,9 +48,12 @@
 <script setup lang="ts">
 import CoverPage from "./components/CoverPage.vue";
 import AboutPage from "./components/AboutPage.vue";
+import TimelinePage from "./components/TimelinePage.vue";
+
 const navigationItems = [
   { title: "Home", icon: "mdi-home" },
   { title: "About", icon: "mdi-information" },
+  { title: "Timeline", icon: "mdi-email" },
   { title: "Contact", icon: "mdi-email" },
 ];
 const makeId = (title: string) => {
