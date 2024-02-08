@@ -1,6 +1,6 @@
 <template>
   <v-sheet
-    color="grey-lighten-4"
+    color=""
   >
     <v-img
       aspect-ratio="1/1"
