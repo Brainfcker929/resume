@@ -8,6 +8,10 @@
         Icon
       </v-app-bar-nav-icon>
       <v-toolbar-title text="Pauls Portfolio" />
+      <v-btn
+        icon="mdi-theme-light-dark"
+        @click="toggleTheme"
+      />
     </v-app-bar>
       
     <v-navigation-drawer location="right">
@@ -49,6 +53,12 @@
 import CoverPage from "./components/CoverPage.vue";
 import AboutPage from "./components/AboutPage.vue";
 import TimelinePage from "./components/TimelinePage.vue";
+import { useTheme } from "vuetify/lib/framework.mjs";
+
+const theme = useTheme();
+const toggleTheme = () => {
+  theme.global.name.value = theme.global.current.value.dark ? "light" : "dark";
+};
 
 const navigationItems = [
   { title: "Home", icon: "mdi-home" },
