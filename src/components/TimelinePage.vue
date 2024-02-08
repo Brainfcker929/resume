@@ -31,13 +31,12 @@
           <v-card-title>
             {{ item.title }}
           </v-card-title>
-          <v-card-subtitle>
-            {{ item.company }} 
-            <br> <!-- TODO: in eine Zeile machen mit einem Badge-->
-            {{ item.location }}
+          <v-card-subtitle class="d-flex justify-space-between">
+            <span>{{ item.company }}</span> 
+            <span>{{ item.location }}</span>
           </v-card-subtitle>
           <v-spacer />
-          <v-card-actions>
+          <v-card-actions class="d-flex justify-end ">
             <v-btn
               color="red"
               :icon="item.show ? 'mdi-chevron-up' : 'mdi-chevron-down'"
